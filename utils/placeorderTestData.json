@@ -1,0 +1,23 @@
+[
+    {
+        "description": "Valid Username + Valid Password",
+        "username" : "nrnutthanapon@gmail.com",
+        "password" : "P@ssw0rd"
+    },
+    {
+        "description": "Invalid Username + Invalid Password",
+        "username" : "deardear25443@gmail.com",
+        "password" : "Pyn_6344"
+    },
+    {
+        "description": "Valid Username + Invalid Password",
+        "username" : "nrnutthanapon@gmail.com",
+        "password" : "Pyn_6344"
+    },
+    {
+        "description": "Invalid Username + Valid Password",
+        "username" : "deardear25443@gmail.com",
+        "password" : "P@ssw0rd"
+    }
+
+]
