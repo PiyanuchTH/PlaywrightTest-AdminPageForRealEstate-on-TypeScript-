@@ -2,7 +2,10 @@
   "name": "playwright-test-estatepage",
   "version": "1.0.0",
   "main": "index.js",
-  "scripts": {},
+  "scripts": {
+    "SafariNewConfig": "npx playwright test tests/createNewAsset.spec.ts --config playwright.config.ts --project=safari",
+    "ChromeNewConfig": "npx playwright test tests/createNewAsset.spec.ts --config playwright.config.ts --project=chrome"
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",

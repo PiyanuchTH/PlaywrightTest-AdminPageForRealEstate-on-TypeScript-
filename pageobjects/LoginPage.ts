@@ -1,4 +1,5 @@
 import { test, expect, Locator, Page } from '@playwright/test';
+import { LOGIN_URL } from '../utils/constants';
 
 export class LoginPage
 {
@@ -16,13 +17,24 @@ export class LoginPage
     }
 
     async goTo(){
-        await this.page.goto("https://the-cozy-keys-frontend.vercel.app/admin/login");
+        await this.page.goto(LOGIN_URL);
     }
 
     async validateLogin(username: string, password: string){
-        await this.userName.fill(username);
-        await this.password.fill(password);
+        await this.userName.pressSequentially(username, { delay: 50 });
+        await this.password.pressSequentially(password, { delay: 50 });
+        await expect(this.userName).toHaveValue(username);
+        await expect(this.password).toHaveValue(password);
         await this.signInbutton.click();
+    }
+
+    async isLoggedIn(): Promise<boolean> {
+        try {
+            await this.page.waitForURL(url => !url.pathname.includes("/login"), { timeout: 20000 });
+            return true;
+        } catch {
+            return false;
+        }
     }
 }
 
